@@ -1,0 +1,121 @@
+@font-face {
+    font-family: Digital7;
+    src: url('digital-7-font/Digital7Mono-B1g5.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#calculator {
+    width: 80%;
+    border: 1px solid lightgray;
+    height: 50%;
+    max-width: 600px;
+    min-width:300px;
+    border-radius: 1rem;
+}
+
+.digits {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 0.5rem;
+    justify-items: stretch;
+    align-items: stretch;
+
+    height: 80%;
+    padding: 1rem;
+    width: 100%;
+}
+
+.digits>button {
+    border: 1px solid lightgray;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+    cursor: pointer;
+
+    transition: border-color 0.1s ease,
+        transform 0.1s ease-in;
+
+}
+
+.digits>button:hover {
+    border-color: gray;
+}
+
+#display {
+    height: 20%;
+    padding: 1rem 1rem 0rem 1rem;
+}
+
+#display>input {
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    padding-inline: 1rem;
+    font-family: 'Digital7';
+    font-size: 4rem;
+    padding-block: auto;
+    text-decoration: none;
+    border: solid 1px lightgray;
+    border-radius: 0.5rem;
+}
+
+.controls {
+    display: flex;
+}
+
+
+[data-operator='add'] {
+    grid-row: 1;
+    grid-column: 4;
+}
+
+[data-operator='substract'] {
+    grid-row: 1;
+    grid-column: 5;
+}
+
+[data-operator='divide'] {
+    grid-row: 2;
+    grid-column: 4;
+}
+
+[data-operator='multiply'] {
+    grid-row: 2;
+    grid-column: 5;
+}
+
+[data-operator='evaluate'] {
+    grid-row: 3 / 5;
+    grid-column: 4 / 6;
+    background-color: lightcoral;
+    color: white;
+}
+
+[data-zero] {
+    grid-row: 4;
+    grid-column: 1/4;
+}
+
+button.clicked {
+    transform: perspective(500px) translateZ(20px);
+}
